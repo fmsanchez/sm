@@ -5,8 +5,13 @@
  */
 
 var app = require('../app');
+var models = require("../models");
 var debug = require('debug')('sm:server');
 var http = require('http');
+
+models.sequelize.sync().then(function() {
+  console.log('DB ready!');
+});
 
 /**
  * Get port from environment and store in Express.
