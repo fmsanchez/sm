@@ -2,8 +2,24 @@ var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
 var env       = process.env.NODE_ENV || "development";
-var config    = require(__dirname + '/../config/config.json')[env];
-var sequelize = new Sequelize(config.database, config.username, config.password, config);
+//var config    = require(__dirname + '/../config/config.json')[env];
+var sequelize = null;
+
+if (process.env.DATABASE_URL) {
+  var sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect:  'postgres',
+    protocol: 'postgres',
+    port:     match[4],
+    host:     match[3],
+    logging:  true //false
+  });
+} else {
+  sequelize = new Sequelize(undefined, undefined, undefined, {
+    dialect: 'sqlite',
+    storage: './development.sqlite'
+  });
+}
+
 var db        = {};
 
 fs
