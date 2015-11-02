@@ -21,11 +21,28 @@ a {
 
 #page-title {
 	padding-left: .4em;
-	font-size: 1.7em;
+	height: 2em;
+	line-height: 2em;
+	font-size: 1.6em;
+}
+
+#create-button {
+	margin: .5em;
+	height: 2em;
+	text-align: center;
+	width: 6.3em;
+	line-height: 2em;
+	vertical-align: middle;
+	background-color: #1f8674;
+	display: inline-block;
+	position: relative;
+	float: right;
+	border-radius: .2em; 
 }
 
 .header-row {
-	padding-top: .5em;
+	padding-top: .8em;
+	min-height: 2em;
 }
 
 .home-header #filter-button {
