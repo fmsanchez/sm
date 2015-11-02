@@ -4,7 +4,11 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  models.User.findAll().then(function(users) {
+    var json = JSON.stringify(users);
+    res.set('Content-Type', 'application/json');
+    res.end(json);
+  });
 });
 
 router.post('/create', function(req, res, next) {
