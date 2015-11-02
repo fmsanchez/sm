@@ -7,12 +7,26 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   models.Event.findAll().then(function(events) {
     var json = JSON.stringify(events);
+    res.set('Content-Type', 'application/json');
     res.end(json);
   });
 });
 
 router.get('/create', function(req, res, next) {
   res.render('events/create');
+});
+
+router.get('/:id/attending', function(req, res, next) {
+  var event_id = req.params.id;
+  models.Attending.findAll({
+    where: {
+      event_id: event_id
+    }
+  }).then(function(entries) {
+    var json = JSON.stringify(entries);
+    res.set('Content-Type', 'application/json');
+    res.end(json);
+  });
 });
 
 router.post('/attend/', function(req, res, next) {
@@ -60,6 +74,7 @@ router.post('/create', function(req, res, next) {
     geolocation: req.body.eventGeoLocation,
     capacity: req.body.eventCapacity,
     startdate: startDate,
+    created_by: 2,
     enddate: endDate
   }).then(function(entry) {
     entry.save();
