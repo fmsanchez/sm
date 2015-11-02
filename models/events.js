@@ -20,7 +20,8 @@ module.exports = function(sequelize, Sequelize) {
 	      //defferable: Sequelize.Deferrable.INITIALLY_IMMEDIATE
 	    }
 	  },
-	  date: Sequelize.DATE,
+	  startdate: Sequelize.DATE,
+	  finishdate: Sequelize.DATE,
 	  duration: Sequelize.INTEGER
 	}, {
 	  timestamps: true,
