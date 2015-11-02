@@ -154,7 +154,7 @@ a {
 #event-location-input {
 	padding-left: .4em;
 	padding-right: .4em;
-	margin-bottom: 1em;
+	margin-bottom: .6em;
 	font-size: 1.2em;
 	height: 2em;
 	line-height: 2em;
@@ -169,8 +169,8 @@ a {
 
 #category-select {
 	background: transparent;
-	margin-top: .6em;
-	margin-bottom: 1.1em;
+	margin-top: .5em;
+	margin-bottom: .6em;
 	font-size: 1.1em;
 	width: 12em;
 	height: 2.4em;
@@ -178,6 +178,7 @@ a {
 
 #description-input {
 	width: 95%;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 	margin-top: .6em;
 	margin-bottom: .6em;
 	resize: none;
@@ -189,7 +190,7 @@ a {
 	width: 3em;
 	height: 1.8em;
 	margin-top: .6em;
-	margin-bottom: .6em;
+	margin-bottom: .8em;
 	resize: none;
 	font-size: 1em;
 	border: 0;
@@ -198,7 +199,7 @@ a {
 #start-date-input {
 	display: inline-block;
 	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-	font-size: 1.1em;
+	font-size: 1em;
 	width: 55%;
 	height: 2.2em;
 	margin-top: .6em;
@@ -208,11 +209,45 @@ a {
 #start-time-input {
 	display: inline-block;
 	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
-	font-size: 1.1em;
+	font-size: 1em;
 	width: 40%;
 	height: 2.2em;
 	margin-top: .6em;
 	margin-bottom: .6em;
 	border: 0;
+}
+#end-date-input {
+	display: inline-block;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	width: 55%;
+	height: 2.2em;
+	margin-top: .6em;
+	margin-bottom: .6em;
+	border: 0;
+}
+#end-time-input {
+	display: inline-block;
+	font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
+	font-size: 1em;
+	width: 40%;
+	height: 2.2em;
+	margin-top: .6em;
+	margin-bottom: .6em;
+	border: 0;
+}
+
+.big-button {
+	width: 50%;
+	height: 2.5em;
+	line-height: 2.5em;
+	border-radius: 2px;
+	vertical-align: middle;
+	font-size: 1em;
+	color: white;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #1f8674;
+	text-align: center;
 }
 
