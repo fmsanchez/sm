@@ -34,6 +34,7 @@ router.post('/create', function(req, res, next) {
       res.redirect('/events/' + entry.id);
     });
   } catch (err) {
+    console.log("ERROR: ", err);
     console.log("ERROR MESSAGE: ", err.status);
     console.log("STACK: ", err.stack);
   }
