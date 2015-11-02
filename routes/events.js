@@ -15,6 +15,25 @@ router.get('/create', function(req, res, next) {
   res.render('events/create');
 });
 
+router.post('/attend/', function(req, res, next) {
+  var eventId = req.body.eventId;
+  models.Attending.create({
+    user_id: 1,
+    event_id: eventId
+  }).then(function(entry) {
+    entry.save();
+    models.Event.findById(eventId).then(function(result) {
+      if (result) {
+        result.attending += 1;
+        result.save()
+        var json = JSON.stringify(result);
+        res.set('Content-Type', 'application/json');
+        res.end(json);
+      }
+    })
+  });
+});
+
 router.get('/:id', function(req, res, next) {
   console.log("params: ", req.params);
   models.Event.findById(req.params['id']).then(function(result) {
