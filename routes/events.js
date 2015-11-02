@@ -19,25 +19,19 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
-  try {
-    models.Event.create({
-      name: req.body.eventName,
-      description: req.body.eventDescription,
-      category: req.body.eventCategory,
-      location: req.body.eventLocation,
-      geolocation: req.body.eventGeolocation,
-      capacity: int(req.body.eventCapacity),
-      date: req.body.eventDate,
-      duration: req.body.eventDuration
-    }).then(function(entry) {
-      entry.save();
-      res.redirect('/events/' + entry.id);
-    });
-  } catch (err) {
-    console.log("ERROR: ", err);
-    console.log("ERROR MESSAGE: ", err.status);
-    console.log("STACK: ", err.stack);
-  }
+  models.Event.create({
+    name: req.body.eventName,
+    description: req.body.eventDescription,
+    category: req.body.eventCategory,
+    location: req.body.eventLocation,
+    geolocation: req.body.eventGeolocation,
+    capacity: req.body.eventCapacity,
+    date: req.body.eventDate,
+    duration: req.body.eventDuration
+  }).then(function(entry) {
+    entry.save();
+    res.redirect('/events/' + entry.id);
+  });
 })
 
 module.exports = router;
