@@ -11,7 +11,10 @@ if (process.env.DATABASE_URL) {
     protocol: 'postgres',
     port:     process.env.PORT,
     host:     process.env.HOST,
-    logging:  false
+    logging:  false,
+    dialectOptions: {
+      ssl: true
+    }
   });
 } else {
   sequelize = new Sequelize(undefined, undefined, undefined, {
