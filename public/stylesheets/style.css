@@ -2,7 +2,9 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   height: 100% !important;
+  background-color: #eaeaea;
   font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow-y: scroll;
 }
 
 a {
@@ -12,11 +14,14 @@ a {
 .home-header {
 	color: white;
 	width: 100%;
+	/*position: fixed;*/
+	display: block;
 	background-color: #191919;
 }
 
 #page-title {
-	font: 4em;
+	padding-left: .4em;
+	font-size: 1.7em;
 }
 
 .header-row {
@@ -30,9 +35,12 @@ a {
 	display: inline-block;
 	width: 32%;
 	height: 2em;
-	background-color: gray;
+	background-color: #383930;
 	line-height: 2em;
 	text-align: center;
+	border-bottom: solid;
+	border-width-bottom: .2em;
+	border-color: #383930;
 }
 
 .header-button span {
@@ -41,10 +49,46 @@ a {
 
 #header-buttons {
 	width: 90%;
+	margin-top: .5em;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.selected-button {
+	border-color: #1f8674;
 }
 /*
 #attending-button {
 	float: ri;
 }*/
+
+.home-tab {
+	width: 100%;
+}
+
+.event-card {
+	margin-top: .5em;
+	color: white;
+	padding: .6em;
+	width: 90%;
+	height: 10em;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #191919;
+}
+
+.event-title {
+	font-size: 1.3em;
+}
+
+.event-sub-info {
+
+}
+.event-sub-info ul {
+	list-style-type: none;
+	margin-top: .8em;
+	margin-bottom: .8em;
+}
+.event-sub-info li {
+	margin-top: .38em;
+}

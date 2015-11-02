@@ -11,14 +11,14 @@
 	<div class="home-header">
 		<div class="header-row">
 			<span id="page-title">Events</span>
-			<span id="filter-button">Filter</span>
+			<!-- <span id="filter-button">Filter</span> -->
 		</div>
 		<div class="header-row">
 			<div id="header-buttons">
 				<div class="header-button">
 					<span>Profile</span>
 				</div>
-				<div class="header-button">
+				<div class="header-button selected-button">
 					<span>Events</span>
 				</div>
 				<div class="header-button" id="attending-button">
@@ -27,5 +27,13 @@
 			</div>
 		</div>
 	</div>
+	<div class="home-tab">
+		<% include ../events/event-card.ejs %>
+		<% include ../events/event-card.ejs %>
+		<% include ../events/event-card.ejs %>
+		<% include ../events/event-card.ejs %>
+		<% include ../events/event-card.ejs %>
+	</div>
+
 </body>
 </html>
