@@ -23,18 +23,30 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
+  var startDay = req.body.startDate;
+  var startTime = req.body.startTime;
+  var startDate = startDay + ' ' + startTime;
+
+  var endDay = req.body.endDate;
+  var endTime = req.body.endTime;
+  var endDate = endDay + ' ' + endTime;
+  console.log(startDate);
+  console.log(endDate);
+
   models.Event.create({
     name: req.body.eventName,
     description: req.body.eventDescription,
     category: req.body.eventCategory,
     location: req.body.eventLocation,
-    geolocation: req.body.eventGeolocation,
+    geolocation: req.body.eventGeoLocation,
     capacity: req.body.eventCapacity,
-    date: req.body.eventDate,
-    duration: req.body.eventDuration
+    startdate: startDate,
+    enddate: endDate
   }).then(function(entry) {
     entry.save();
-    res.redirect('/events/' + entry.id);
+    var json = JSON.stringify(entry);
+    res.set('Content-Type', 'application/json');
+    res.end(json);
   });
 })
 

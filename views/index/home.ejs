@@ -31,11 +31,9 @@
 		</div>
 	</div>
 	<div class="home-tab">
-		<% include ../events/event-card.ejs %>
-		<% include ../events/event-card.ejs %>
-		<% include ../events/event-card.ejs %>
-		<% include ../events/event-card.ejs %>
-		<% include ../events/event-card.ejs %>
+		<% events.forEach(function(event) { %>
+			<% include ../events/event-card.ejs %>
+		<% }) %>
 	</div>
 	<div class="modal-background" style="display: none;"></div>
 

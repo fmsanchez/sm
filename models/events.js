@@ -11,7 +11,7 @@ module.exports = function(sequelize, Sequelize) {
 	  location: Sequelize.STRING,
 	  geolocation: Sequelize.STRING,
 	  capacity: Sequelize.INTEGER,
-	  attending: { type: Sequelize.INTEGER, defaultValue: 0 },
+	  attending: { type: Sequelize.INTEGER, defaultValue: 1 },
 	  created_by: {
 	    type: Sequelize.INTEGER,
 	    references: {
@@ -21,7 +21,7 @@ module.exports = function(sequelize, Sequelize) {
 	    }
 	  },
 	  startdate: Sequelize.DATE,
-	  finishdate: Sequelize.DATE,
+	  enddate: Sequelize.DATE,
 	  duration: Sequelize.INTEGER
 	}, {
 	  timestamps: true,
