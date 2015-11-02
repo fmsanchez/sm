@@ -11,6 +11,10 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/create', function(req, res, next) {
+  res.render('events/create');
+});
+
 router.get('/:id', function(req, res, next) {
   console.log("params: ", req.params);
   models.Event.findById(req.params['id']).then(function(result) {
