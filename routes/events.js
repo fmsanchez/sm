@@ -39,12 +39,12 @@ router.post('/attend/', function(req, res, next) {
     models.Event.findById(eventId).then(function(result) {
       if (result) {
         result.attending += 1;
-        result.save()
+        result.save();
         var json = JSON.stringify(result);
         res.set('Content-Type', 'application/json');
         res.end(json);
       }
-    })
+    });
   });
 });
 
